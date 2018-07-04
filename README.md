@@ -49,6 +49,7 @@ To schedule filter update (not recommended due to the remote risk of false posit
 **Configuration of smb.conf**:
 
 [global]
+
 	full_audit: failure = none
 	full_audit: success = pwrite write rename unlink mkdir rmdir
 	full_audit: prefix = IP=%I|USER=%u|SHARED=%S
@@ -56,6 +57,7 @@ To schedule filter update (not recommended due to the remote risk of false posit
 	full_audit: priority = debug
 
 [every share]
+
 	vfs objects = full_audit
 
 ### README project Ransomware samba tools:
