@@ -1,0 +1,18 @@
+/var/log/ransom2ban/* {
+#       notifempty
+        olddir /var/log/ransom2ban/old
+        missingok
+        sharedscripts
+        copytruncate
+
+        compress
+#       delaycompress
+        daily
+        rotate 180
+        dateext
+        create 0644 root root
+        postrotate
+        systemctl restart fail2ban > /dev/null 2>/dev/null || true
+        endscript
+}
+
