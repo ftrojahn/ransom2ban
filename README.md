@@ -46,7 +46,20 @@ To schedule filter update (not recommended due to the remote risk of false posit
 
 /path/to/shares/---ANTIVIRUS_BAIT_DO_NOT_DELETE---/...
 
-**DISCLAIMER**: this project is provided as is. I can not be held liable if this does not thwart a ransomware infection, causes your server to spontaneously combust, results in job loss, etc.
+**Configuration to add in smb.conf**:
+
+[global]
+
+	full_audit: failure = none
+	full_audit: success = pwrite write rename unlink mkdir rmdir
+	full_audit: prefix = IP=%I|USER=%u|SHARED=%S
+	full_audit: facility = local5
+	full_audit: priority = debug
+
+[every share]
+
+        vfs objects = full_audit
+
 
 ### README project Ransomware samba tools:
 
@@ -82,3 +95,5 @@ https://github.com/nexxai/CryptoBlocker
 This is a solution to block users infected with different ransomware variants.
 
 [<a href="https://github.com/nexxai/CryptoBlocker/blob/master/README.md">...</a>]
+
+**DISCLAIMER**: this project is provided as is. I can not be held liable if this does not thwart a ransomware infection, causes your server to spontaneously combust, results in job loss, etc.
