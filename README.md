@@ -48,7 +48,7 @@ To schedule filter update (not recommended due to the remote risk of false posit
 
 **DISCLAIMER**: this project is provided as is. I can not be held liable if this does not thwart a ransomware infection, causes your server to spontaneously combust, results in job loss, etc.
 
-### Project Ransomware samba tools
+### README project Ransomware samba tools:
 
 https://github.com/CanaryTek/ransomware-samba-tools
 
@@ -58,9 +58,14 @@ Basically, what it does is enable full audit in Samba server and monitor the log
 
 DISCLAIMER: What we do with this tools is not new, these technics have been used in windows server for a long time. Even the idea of using samba audit is not ours, we first saw it in a german magazine (https://www.heise.de/security/artikel/Erpressungs-Trojaner-wie-Locky-aussperren-3120956.html)
  
+Right now we have two types of detections:
+
+  * Known ransomware: we monitor the logs for known ransomware extensions and filenames. The drawback of this approach is that it only detects known ransomware
+  * Honeypots: we setup a honeypot on every shared folder with names such that an enumeration from a windows client will try to infect that folder first. And we monitor files in that honeypot folder
+
 [<a href="https://github.com/CanaryTek/ransomware-samba-tools/blob/master/README.md">...</a>]
 
-### Project Ransomware Samba Ban
+### README project Ransomware Samba Ban:
 
 https://github.com/quickreflex/ransomware-samba-ban
 
@@ -70,7 +75,7 @@ Basically, what it does is enable full audit in Samba server and monitor the log
 
 [<a href="https://github.com/quickreflex/ransomware-samba-ban/blob/master/README.md">...</a>]
 
-### Project CryptoBlocker
+### README project CryptoBlocker:
 
 https://github.com/nexxai/CryptoBlocker
 
