@@ -52,7 +52,7 @@ To schedule filter update (not recommended due to the remote risk of false posit
 
 	full_audit: failure = none
 	full_audit: success = pwrite write rename unlink mkdir rmdir
-	full_audit: prefix = IP=%I|USER=%u|SHARED=%S
+	full_audit: prefix = IP=%I|USER=%u|SHARE=%S
 	full_audit: facility = local5
 	full_audit: priority = debug
 
