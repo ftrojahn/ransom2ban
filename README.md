@@ -8,8 +8,8 @@ The first and principal is <a href="https://github.com/CanaryTek/ransomware-samb
 the second is <a href="https://github.com/quickreflex/ransomware-samba-ban">Ransomware Samba Ban</a> by **quickreflex**, from which it takes the method to keep filters updated. 
 Finally a special thanks to <a href="https://github.com/nexxai/CryptoBlocker">CryptoBlocker</a> by **nexxai** which maintains a public list of known ransomware encrypted extensions and filenames (<a href="https://fsrm.experiant.ca" target="_blank">https://fsrm.experiant.ca</a>).
 
-**How it works**: it enable full audit in Samba and monitor the logs with fail2ban. 
-When it detect a create/delete/rename log of file with known ransomware encrypted extension or name, 
+**How it works**: it enables full audit in Samba and monitor the logs with fail2ban. 
+When it detects a create/delete/rename log of file with known ransomware encrypted extension or name, 
 otherwise of a bait file (in a honeypot folder, created on each share, 
 with name and creation date made so that it is enumerated first by connected PCs so the files contained will be encrypted before regular ones), 
 it bans the client IP and send a notification mail to administrator with details and instructions for unban.
@@ -24,7 +24,7 @@ Tested on Linux CentOS/RHEL 7
 
 To enable samba audit: edit /etc/samba/smb.conf as described in samba-config/add-to-smb.conf; systemctl restart smb
 
-To config mail notifications: edit sender, smtp and dest in /etc/fail2ban/jail.d/ransom2ban-jail.conf; systemctl restart fail2ban
+To configure mail: edit sender, smtp and dest in /etc/fail2ban/jail.d/ransom2ban-jail.conf; systemctl restart fail2ban
 
 To create honeypot folder ---ANTIVIRUS_BAIT_DO_NOT_DELETE---: honeypots-create/create.sh /path/to/share (no arg=all)
 
