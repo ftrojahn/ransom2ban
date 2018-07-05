@@ -8,11 +8,11 @@ The first and principal is <a href="https://github.com/CanaryTek/ransomware-samb
 the second is <a href="https://github.com/quickreflex/ransomware-samba-ban">Ransomware Samba Ban</a> by **quickreflex**, from which it takes the method to keep filters updated. 
 Finally a special thanks to <a href="https://github.com/nexxai/CryptoBlocker">CryptoBlocker</a> by **nexxai** which maintains a public list of known ransomware encrypted extensions and filenames (<a href="https://fsrm.experiant.ca" target="_blank">https://fsrm.experiant.ca</a>).
 
-**How it works**: it enables full audit in Samba and monitor the logs with fail2ban. 
-When it detects a create/delete/rename log of file with known ransomware encrypted extension or name, 
+**How it works**: it enables full audit in samba and log monitoring with fail2ban. 
+When it is detects a create/delete/rename log of file with known ransomware encrypted extension or name, 
 otherwise of a bait file (in a honeypot folder, created on each share, 
 with name and creation date made so that it is enumerated first by connected PCs so the files contained will be encrypted before regular ones), 
-it bans the client IP and send a notification mail to administrator with details and instructions for unban.
+the client IP is banned and a mail is sent to administrator with details and instructions for unban.
 
 **Prerequisites**: fail2ban, curl, jq, pyinotify (yum install epel-release; yum update; yum install fail2ban curl jq python-inotify)
 
