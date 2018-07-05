@@ -10,8 +10,8 @@ Finally a special thanks to <a href="https://github.com/nexxai/CryptoBlocker">Cr
 
 **How it works**: it enable full audit in Samba and monitor the logs with fail2ban. 
 When it detect a create/delete/rename log of file with known ransomware encrypted extension or name, 
-otherwise of a honeypot file (in a dedicated shared folder with name and creation date made so that it is enumerated first by connected PCs, 
-so the 2.000 bait files contained will be encrypted before the regular ones), 
+otherwise of a bait file (in a honeypot folder, created on each share, 
+with name and creation date made so that it is enumerated first by connected PCs so the files contained will be encrypted before regular ones), 
 it bans the client IP and send a notification mail to administrator with details and instructions for unban.
 
 **Prerequisites**: fail2ban, curl, jq, pyinotify (yum install epel-release; yum update; yum install fail2ban curl jq python-inotify)
