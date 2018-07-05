@@ -4,9 +4,15 @@ Scripts to configure a Linux fileserver to protect Samba sharing files from encr
 
 This project was born from the merger and customization (and localization in italian) of three projects hosted by GitHub.
 
-The first and principal is <a href="https://github.com/CanaryTek/ransomware-samba-tools">Ransomware samba tools</a> by **CanaryTek**, from which it was forked, the second is <a href="https://github.com/quickreflex/ransomware-samba-ban">Ransomware Samba Ban</a> by **quickreflex**, from which it takes the method to keep filters updated. Finally a special thanks to <a href="https://github.com/nexxai/CryptoBlocker">CryptoBlocker</a> by **nexxai** which maintains a public list of known ransomware encrypted extensions and filenames (<a href="https://fsrm.experiant.ca" target="_blank">https://fsrm.experiant.ca</a>).
+The first and principal is <a href="https://github.com/CanaryTek/ransomware-samba-tools">Ransomware samba tools</a> by **CanaryTek**, from which it was forked, 
+the second is <a href="https://github.com/quickreflex/ransomware-samba-ban">Ransomware Samba Ban</a> by **quickreflex**, from which it takes the method to keep filters updated. 
+Finally a special thanks to <a href="https://github.com/nexxai/CryptoBlocker">CryptoBlocker</a> by **nexxai** which maintains a public list of known ransomware encrypted extensions and filenames (<a href="https://fsrm.experiant.ca" target="_blank">https://fsrm.experiant.ca</a>).
 
-**How it works**: it enable full audit in Samba and monitor the logs with fail2ban. When it detect a create/delete/rename log of file with known ransomware extension or name, otherwise of a honeypot file (in dedicated folders created on samba shares, each with 2K bait files), it bans the client IP and send a notification mail to administrator with details and instructions for unban.
+**How it works**: it enable full audit in Samba and monitor the logs with fail2ban. 
+When it detect a create/delete/rename log of file with known ransomware encrypted extension or name, 
+otherwise of a honeypot file (in a dedicated shared folder with name and creation date made so that it is enumerated first by connected PCs, 
+so the 2.000 bait files contained will be encrypted before the regular ones), 
+it bans the client IP and send a notification mail to administrator with details and instructions for unban.
 
 **Prerequisites**: fail2ban, curl, jq, pyinotify (yum install epel-release; yum update; yum install fail2ban curl jq python-inotify)
 
