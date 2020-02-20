@@ -29,6 +29,7 @@ To configure mail: edit sender, smtp and dest in /etc/fail2ban/jail.d/ransom2ban
 To create honeypot folder ---ANTIVIRUS_BAIT_DO_NOT_DELETE---: honeypots-create/create.sh /path/to/share (no arg=all)
 
 To update filter of known ransomware encrypted extensions and file names from fsrm.experiant.ca: update-filters/update.sh
+You can use update-filters/SkipList.txt for local excludes.
 
 To schedule filter update (not recommended due to the remote risk of false positives for new extensions): add in root crontab 
 
