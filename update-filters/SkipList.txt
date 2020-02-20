@@ -1,0 +1,2 @@
+FE04\.tmp
+\.tmp\.exe
