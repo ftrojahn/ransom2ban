@@ -5,6 +5,7 @@ BASEDIR=$(dirname "$0")
 cp $BASEDIR/fail2ban-config/jail.d/ransom2ban-jail.conf /etc/fail2ban/jail.d/
 cp $BASEDIR/fail2ban-config/filter.d/ransom2ban-filter.conf /etc/fail2ban/filter.d/
 cp $BASEDIR/fail2ban-config/action.d/ransom2ban-mail.conf /etc/fail2ban/action.d/
+cp $BASEDIR/fail2ban-config/action.d/ransom2ban-mountro.conf /etc/fail2ban/action.d/
 
 cp $BASEDIR/rsyslog-config/00-samba_audit.conf /etc/rsyslog.d/
 
