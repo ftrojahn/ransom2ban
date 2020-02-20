@@ -21,5 +21,7 @@ failregex=smbd_audit: IP=<HOST>\|.*%(__honeypot_files_re)s
           smbd_audit: IP=<HOST>\|.*%(__known_ransom_files_re)s
 EOF
 	systemctl restart fail2ban
+else
+	echo "Download failed!"
 fi
 
